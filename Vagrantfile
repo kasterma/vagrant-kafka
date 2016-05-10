@@ -8,6 +8,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "base"
   config.vm.box_url = "http://files.vagrantup.com/precise64.box"
+  config.vm.provision :shell, :path => "add-hosts.sh"
 
   config.vm.hostname = "kafka1"
   config.vm.provision :shell, :path => "zk-install-script.sh"
