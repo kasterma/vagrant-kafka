@@ -3,14 +3,14 @@
     "host" : "10.10.10.20",
     "port" : "9998",
     "queries" : [ {
-      "obj" : "kafka.server:type=BrokerTopicMetrics,*",
-      "attr" : [ "MessagesInPerSec" ],
+      "obj" : "kafka.server:type=BrokerTopicMetrics,name=BytesInPerSec",
+      "attr" : [ "Count" ],
       "outputWriters" : [ {
           "@class" : "com.googlecode.jmxtrans.model.output.KeyOutWriter",
-	  "outputFile" : "/tmp/kafka1-metrics.txt",
+          "outputFile" : "/tmp/kafka1-metrics.txt",
           "maxLogFileSize" : "10MB",
           "maxLogBackupFiles" : 200,
-	  "delimiter" : "\t",
+          "delimiter" : "\t",
           "debug" : true,
           "typeNames" : ["name"]
       } ]
