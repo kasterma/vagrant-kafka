@@ -49,4 +49,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     kafka3.vm.network :forwarded_port, guest: 9094, host: 9094 # kafka server
   end
 
+  config.vm.define "general" do |general|
+    general.vm.network :private_network, ip: "10.10.10.50"
+    general.vm.hostname = "general.kasterma-local.net"
+    general.vm.provision :shell, :path => "base-install.sh"
+    general.vm.provision :shell, :path => "jmxtrans-install.sh"
+  end
+
 end
