@@ -34,7 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     kafka2.vm.hostname = "kafka2.kasterma-local.net"
     kafka2.vm.provision :shell, :path => "base-install.sh"
     kafka2.vm.provision :file, source: "server2.properties", destination: "server.properties"
-    kafka2.vm.provision :shell, :path => "kafka-install-script.sh"
+    kafka2.vm.provision :shell, :path => "kafka-install-script-2.sh"
 
     kafka2.vm.network :forwarded_port, guest: 9093, host: 9093 # kafka server
   end
@@ -44,7 +44,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     kafka3.vm.hostname = "kafka3.kasterma-local.net"
     kafka3.vm.provision :shell, :path => "base-install.sh"
     kafka3.vm.provision :file, source: "server3.properties", destination: "server.properties"
-    kafka3.vm.provision :shell, :path => "kafka-install-script.sh"
+    kafka3.vm.provision :shell, :path => "kafka-install-script-3.sh"
 
     kafka3.vm.network :forwarded_port, guest: 9094, host: 9094 # kafka server
   end
