@@ -45,3 +45,10 @@ Init script:
 
 Put .json files into
     /var/lib/jmxtrans
+
+
+# VENV
+
+Use the already set up virtual env environment
+
+    . ../cluster-automation/.venv/bin/activate
