@@ -1,0 +1,20 @@
+---
+- hosts: zookeeper
+  remote_user: vagrant
+  tasks:
+  - name: create zookeeper dir
+    file:
+      group: vagrant
+      owner: vagrant
+      path: /home/vagrant/zookeeper
+      state: directory
+  - name: put zookeeper files in place
+    unarchive:
+      src: zookeeper-3.4.8.tar.gz
+      dest: /home/vagrant/zookeeper
+  - name: set up zookeeper config
+    copy:
+      src: zoo.cfg
+      dest: /home/vagrant/zookeeper/zookeeper-3.4.8/conf/zoo.cfg
+  - name: start zookeeper
+    shell: "zookeeper/zookeeper-3.4.8/bin/zkServer.sh start"

@@ -1,4 +1,17 @@
-10.10.10.10    zook1.kasterma-local.net     zook1
-10.10.10.20    kafka1.kasterma-local.net    kafka1
-10.10.10.30    kafka2.kasterma-local.net    kafka2
-10.10.10.40    kafka3.kasterma-local.net    kafka3
+[zookeeper]
+zook1
+
+[kafka]
+kafka1
+kafka2
+kafka3
+
+[jmxtrans]
+general
+
+[vagrant]
+zook1
+kafka1
+kafka2
+kafka3
+general
